@@ -48,22 +48,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css"> 
+    <link rel="stylesheet" href="./css/style.css">
     <title>Hotel</title>
 </head>
 <body>
     <div class="container">
-        <?php foreach ($hotels as $hotel) : ?>
-            <div class="hotel">
-                <h2><?php echo $hotel['name']; ?></h2>
-                <p><?php echo $hotel['description']; ?></p>
-                <p>Parking: <?php echo $hotel['parking'] ? 'Yes' : 'No'; ?></p>
-                <p>Vote: <?php echo $hotel['vote']; ?></p>
-                <p>Distance to center: <?php echo $hotel['distance_to_center']; ?> km</p>
-            </div>
-        <?php endforeach; ?>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Hotel Name</th>
+                    <th scope="col">Parking</th>
+                    <th scope="col">Vote</th>
+                    <th scope="col">Center distance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($hotels as $hotel) : ?>
+                    <tr>
+                        <th scope="row"><?php echo $hotel['name']; ?></th>
+                        <td>Parking: <?php echo $hotel['parking'] ? 'Yes' : 'No'; ?></td>
+                        <td>Vote: <?php echo $hotel['vote']; ?></td>
+                        <td>Distance to center: <?php echo $hotel['distance_to_center']; ?> km</td>
+                    </tr>
+                <?php endforeach; ?> 
+            </tbody>
+        </table>
     </div>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
 </body>
 </html>
