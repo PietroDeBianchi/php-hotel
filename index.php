@@ -104,6 +104,7 @@
                         });
                     }
                 ?>
+                <!-- Start of loop: Iterate through each hotel in $filteredHotels array -->
                 <?php foreach ($filteredHotels as $hotel) : ?>
                     <tr>
                         <th scope="row"><?php echo $hotel['name']; ?></th>
